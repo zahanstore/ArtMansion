@@ -233,6 +233,59 @@
                 grid-template-columns: 1fr;
             }
         }
+            .commission-cta {
+        background: rgba(255,255,255,0.85);
+        padding: 4rem 2rem;
+        margin: 3rem 0;
+        text-align: center;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.3rem 1rem rgba(0,0,0,0.05);
+    }
+    
+            .commission-cta h2 {
+        font-size: 2rem;
+        color: var(--dark);
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+    }
+    
+            .cta-description {
+        max-width: 700px;
+        margin: 0 auto 2rem;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #555;
+    }
+    
+            .cta-button {
+        display: inline-block;
+        padding: 0.8rem 2.5rem;
+        background: var(--accent);
+        color: white;
+        text-decoration: none;
+        border-radius: 2rem;
+        font-weight: 600;
+        transition: all 0.3s;
+        margin-bottom: 1.5rem;
+        border: 2px solid var(--accent);
+    }
+    
+            .cta-button:hover {
+        background: transparent;
+        color: var(--accent);
+        transform: translateY(-2px);
+    }
+    
+            .zahan-note {
+        color: #666;
+        font-size: 0.95rem;
+    }
+    
+            .zahan-note a {
+        color: var(--accent);
+        font-weight: 600;
+        text-decoration: none;
+    }
     </style>
 </head>
 <body>
@@ -661,12 +714,15 @@
                 </div>
             </div>
         </div>
-        <div class="cta-section">
-            <h2 class="cta-title">Commission Your Personal Masterpiece</h2>
-            <p class="cta-desc">At ArtMansion®, we believe every space deserves unique art. Whether you're looking for a specific size to fit your wall or want a custom piece that reflects your personal style, our artist is available for commissioned works.</p>
-            <a href="#" class="cta-button">Request Commission Details</a>
-            <p class="zahan-store">All purchases handled by our partner <a href="https://zahanstore.com" target="_blank">Zahan Store</a></p>
-        </div>
+
+    <section class="commission-cta">
+    <div class="container">
+        <h2>Commission Your Personal Masterpiece</h2>
+        <p class="cta-description">At ArtMansion®, we believe every space deserves unique art. Whether you're looking for a specific size to fit your wall or want a custom piece that reflects your personal style, our artist is available for commissioned works.</p>
+        <a href="#" class="cta-button">Request Commission Details</a>
+        <p class="zahan-note">All purchases handled by our partner <a href="https://zahanstore.com" target="_blank">Zahan Store</a></p>
+    </div>
+        </section>
         
         <footer>
             <div class="social-links">
