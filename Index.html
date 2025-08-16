@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Gallery | Paintings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sand-grey: #e8e5de;
+            --accent-color: #2bb3a6;
+            --dark-text: #333333;
+            --light-text: #f8f8f8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
+        }
+        
+        body {
+            background-color: var(--sand-grey);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        h1 {
+            font-weight: 600;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--dark-text);
+        }
+        
+        .subtitle {
+            font-weight: 300;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+        }
+        
+        nav {
+            margin: 30px 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+        
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--light-text);
+            background-color: var(--accent-color);
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .painting-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .painting-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .painting-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .painting-info {
+            padding: 15px;
+        }
+        
+        .painting-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--accent-color);
+        }
+        
+        .painting-size {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 60px 0;
+            background-color: rgba(255,255,255,0.7);
+            margin: 40px 0;
+            border-radius: 8px;
+        }
+        
+        .cta-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #239a8e;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            margin: 0 10px;
+            color: var(--dark-text);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Art Gallery</h1>
+            <p class="subtitle">Contemporary paintings by [Your Name]</p>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Gallery</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Exhibitions</a></li>
+                <li><a href="#">Commissions</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <div class="gallery">
+            <!-- Painting 1 -->
+            <div class="painting-card">
+                <img src="https://via.placeholder.com/300x250" alt="Painting 1" class="painting-img">
+                <div class="painting-info">
+                    <h3 class="painting-title">Ocean Breeze</h3>
+                    <p class="painting-size">24" × 36" | Oil on canvas</p>
+                    <p class="painting-price">$1,200</p>
+                </div>
+            </div>
+            
+            <!-- Painting 2 -->
+            <div class="painting-card">
+                <img src="https://via.placeholder.com/300x250" alt="Painting 2" class="painting-img">
+                <div class="painting-info">
+                    <h3 class="painting-title">Mountain Dawn</h3>
+                    <p class="painting-size">18" × 24" | Acrylic</p>
+                    <p class="painting-price">$850</p>
+                </div>
+            </div>
+            
+            <!-- Painting 3 -->
+            <div class="painting-card">
+                <img src="https://via.placeholder.com/300x250" alt="Painting 3" class="painting-img">
+                <div class="painting-info">
+                    <h3 class="painting-title">Urban Rhythm</h3>
+                    <p class="painting-size">30" × 40" | Mixed media</p>
+                    <p class="painting-price">$1,500</p>
+                </div>
+            </div>
+            
+            <!-- Add more paintings as needed -->
+        </div>
+        
+        <div class="cta-section">
+            <h2 class="cta-title">Interested in a custom piece?</h2>
+            <p>Commission a painting tailored to your space and style.</p>
+            <a href="#" class="cta-button">Request Commission</a>
+        </div>
+        
+        <footer>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Pinterest</a>
+            </div>
+            <p>© 2023 [Your Name]. All rights reserved.</p>
+            <p>contact@yourart.com | +1 (555) 123-4567</p>
+        </footer>
+    </div>
+</body>
+</html>
