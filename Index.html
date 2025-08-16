@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+        <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,9 +10,9 @@
     <style>
         :root {
             --sand-grey: #e8e5de;
-            --accent-color: #2bb3a6;
-            --dark-text: #333333;
-            --light-text: #f8f8f8;
+            --accent: #2bb3a6;
+            --dark: #333;
+            --light: #f8f8f8;
         }
         
         * {
@@ -22,122 +23,46 @@
         }
         
         body {
-            background-color: var(--sand-grey);
-            color: var(--dark-text);
+            background: var(--sand-grey);
+            color: var(--dark);
             line-height: 1.6;
         }
         
-        .hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('background.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            margin-bottom: 50px;
-        }
-        
-        .hero-nav {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .hero-logo {
-            height: 60px;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            padding: 0 20px;
-            margin-top: 60px;
-        }
-        
-        .hero-nav ul {
-            display: flex;
-            list-style: none;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .hero-nav ul li {
-            margin: 0 10px;
-        }
-        
-        .hero-nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 8px 15px;
-            border-radius: 20px;
-            transition: all 0.3s;
-        }
-        
-        .hero-nav ul li a:hover, .hero-nav ul li a.active {
-            background-color: rgba(255,255,255,0.2);
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
         header {
-            padding: 30px 0;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background.jpg') center/cover;
+            padding: 2rem 1rem;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            color: white;
         }
         
         .logo {
-            height: 90px;
-            margin-bottom: 15px;
+            height: 5rem;
+            margin-bottom: 1rem;
         }
         
         .brand-title {
             font-weight: 700;
             font-size: 2.8rem;
-            margin-bottom: 5px;
-            color: var(--dark-text);
-            position: relative;
-            display: inline-block;
-            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
         }
         
         .brand-title::after {
             content: '®';
             font-size: 1rem;
             vertical-align: super;
-            margin-left: 3px;
         }
         
         .slogan {
             font-weight: 400;
             font-size: 1.4rem;
-            color: var(--accent-color);
             letter-spacing: 1.5px;
-            margin-top: 10px;
             text-transform: uppercase;
-            background: rgba(255,255,255,0.7);
-            padding: 8px 20px;
-            border-radius: 30px;
+            background: rgba(0,0,0,0.5);
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
             display: inline-block;
-            border: 1px solid var(--accent-color);
-        }
-        
-        nav {
-            margin: 25px 0 15px;
+            border: 1px solid white;
+            margin: 0.5rem 0 1.5rem;
         }
         
         nav ul {
@@ -145,326 +70,103 @@
             justify-content: center;
             list-style: none;
             flex-wrap: wrap;
+            gap: 1rem;
         }
         
-        nav ul li {
-            margin: 5px 12px;
-        }
-        
-        nav ul li a {
+        nav a {
+            color: white;
             text-decoration: none;
-            color: var(--dark-text);
             font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
             transition: all 0.3s;
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 1.05rem;
         }
         
-        nav ul li a:hover, nav ul li a.active {
-            color: var(--light-text);
-            background-color: var(--accent-color);
-            transform: translateY(-2px);
+        nav a:hover, nav a.active {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
         
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 35px;
-            margin: 50px 0;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
         }
         
         .painting-card {
             background: white;
-            border-radius: 10px;
+            border-radius: 0.5rem;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+            box-shadow: 0 0.3rem 1rem rgba(0,0,0,0.1);
+            transition: all 0.3s;
         }
         
         .painting-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            transform: translateY(-0.5rem);
+            box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.15);
         }
         
         .painting-img-container {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
             background: #f5f5f5;
+            padding: 1rem;
+            height: 300px;
+            display: grid;
+            place-items: center;
         }
         
         .painting-img {
-            width: 100%;
-            height: auto;
-            max-height: 400px;
+            max-width: 100%;
+            max-height: 100%;
             object-fit: contain;
-            transition: transform 0.5s;
-            padding: 10px;
-        }
-        
-        .painting-card:hover .painting-img {
-            transform: scale(1.02);
         }
         
         .painting-info {
-            padding: 20px;
-            background: white;
-            position: relative;
+            padding: 1.5rem;
         }
         
         .painting-title {
             font-weight: 600;
-            margin-bottom: 8px;
-            color: var(--accent-color);
-            font-size: 1.2rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
         }
         
         .painting-style {
             display: inline-block;
             font-size: 0.8rem;
-            padding: 4px 10px;
-            background-color: var(--sand-grey);
-            border-radius: 12px;
-            margin-right: 8px;
-            margin-bottom: 10px;
+            padding: 0.3rem 0.8rem;
+            background: var(--sand-grey);
+            border-radius: 1rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.8rem;
         }
         
-        .painting-size {
+        .painting-size, .painting-price {
             font-size: 0.9rem;
             color: #666;
-            margin-bottom: 8px;
+            margin-bottom: 0.5rem;
         }
         
         .painting-price {
             font-weight: 700;
-            color: var(--dark-text);
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            display: block;
+            color: var(--dark);
         }
         
         .buy-button {
             display: inline-block;
-            padding: 8px 20px;
-            background-color: var(--accent-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 20px;
-            font-weight: 500;
-            transition: all 0.3s;
-            font-size: 0.9rem;
-        }
-        
-        .buy-button:hover {
-            background-color: #239a8e;
-            transform: translateY(-2px);
-        }
-        
-        .cta-section {
-            text-align: center;
-            padding: 80px 40px;
-            background-color: rgba(255,255,255,0.85);
-            margin: 60px 0;
-            border-radius: 15px;
-            background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.8));
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-        
-        .cta-title {
-            font-size: 2.2rem;
-            margin-bottom: 25px;
-            color: var(--dark-text);
-            font-weight: 600;
-        }
-        
-        .cta-desc {
-            max-width: 700px;
-            margin: 0 auto 30px;
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            padding: 16px 40px;
-            background-color: var(--accent-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s;
-            letter-spacing: 0.8px;
-            border: 2px solid var(--accent-color);
-            font-size: 1.1rem;
-            box-shadow: 0 4px 10px rgba(43, 179, 166, 0.3);
-        }
-        
-        .cta-button:hover {
-            background-color: transparent;
-            color: var(--accent-color);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(43, 179, 166, 0.4);
-        }
-        
-        footer {
-            text-align: center;
-            padding: 50px 0;
-            margin-top: 60px;
-            border-top: 1px solid rgba(0,0,0,0.1);
-            background-color: rgba(255,255,255,0.8);
-            border-radius: 20px 20px 0 0;
-        }
-        
-        .social-links {
-            margin: 30px 0;
-        }
-        
-        .social-links a {
-            margin: 0 15px;
-            color: var(--dark-text);
-            font-size: 1.5rem;
-            transition: color 0.3s;
-            text-decoration: none;
-        }
-        
-        .social-links a:hover {
-            color: var(--accent-color);
-            transform: translateY(-2px);
-        }
-        
-        .footer-contact {
-            margin: 20px 0;
-            font-size: 1.05rem;
-        }
-        
-        .copyright {
-            font-size: 0.95rem;
-            color: #777;
-            margin-top: 20px;
-        }
-        
-        .zahan-store {
-            margin-top: 20px;
-            font-size: 1rem;
-        }
-        
-        .zahan-store a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        @media (max-width: 992px) {
-            .gallery {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-                gap: 25px;
-            }
-            
-            .hero {
-                height: 70vh;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .brand-title {
-                font-size: 2.2rem;
-            }
-            
-            .slogan {
-                font-size: 1.2rem;
-                padding: 6px 15px;
-            }
-            
-            nav ul li a {
-                padding: 6px 12px;
-                font-size: 0.95rem;
-            }
-            
-            .cta-section {
-                padding: 60px 20px;
-            }
-            
-            .cta-title {
-                font-size: 1.8rem;
-            }
-            
-            .hero {
-                height: 60vh;
-                margin-bottom: 30px;
-            }
-            
-            .hero-nav {
-                flex-direction: column;
-                padding: 15px;
-            }
-            
-            .hero-logo {
-                margin-bottom: 15px;
-                height: 50px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .gallery {
-                grid-template-columns: 1fr;
-            }
-            
-            .brand-title {
-                font-size: 1.8rem;
-            }
-            
-            .logo {
-                height: 70px;
-            }
-            
-            .hero {
-                height: 50vh;
-            }
-            
-            .hero-nav ul li {
-                margin: 0 5px;
-            }
-            
-            .hero-nav ul li a {
-                padding: 5px 10px;
-                font-size: 0.9rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    
+
+
     <div class="container">
-        <header>
-            <header style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('background.jpg'); background-size: cover; background-position: center; padding: 40px 0; text-align: center; color: white;">
-            <img src="logo.png" alt="ArtMansion Logo" class="logo">
-            <h1 class="brand-title" style="color: white;">ArtMansion</h1>
-            <p class="slogan" style="background: rgba(0,0,0,0.5); border-color: white; color: white;">Paintings, Art, Vases and more...</p>
-    
-    <nav style="margin-top: 30px;">
-        <ul style="display: flex; justify-content: center; list-style: none; flex-wrap: wrap;">
-            <li style="margin: 0 15px;"><a href="#" class="active" style="color: white; text-decoration: none;">Gallery</a></li>
-            <li style="margin: 0 15px;"><a href="#" style="color: white; text-decoration: none;">Collections</a></li>
-            <li style="margin: 0 15px;"><a href="#" style="color: white; text-decoration: none;">Artist</a></li>
-            <li style="margin: 0 15px;"><a href="#" style="color: white; text-decoration: none;">Exhibitions</a></li>
-            <li style="margin: 0 15px;"><a href="#" style="color: white; text-decoration: none;">Commission</a></li>
-            <li style="margin: 0 15px;"><a href="#" style="color: white; text-decoration: none;">Contact</a></li>
-        </ul>
-    </nav>
-        </header>
-        
         <div class="gallery">
             <!-- Painting 1 -->
             <div class="painting-card">
                 <div class="painting-img-container">
-                    <img src="Paintings/P1.jpg" alt="Painting 1" class="painting-img">
+                    <img src="Paintings/P1.jpg" alt="Mountain Dawn" class="painting-img">
                 </div>
                 <div class="painting-info">
                     <span class="painting-style">Landscape</span>
@@ -473,7 +175,13 @@
                     <p class="painting-price">$1,800</p>
                     <a href="https://zahanstore.com/artmansion-p1" class="buy-button">Buy on Zahan Store</a>
                 </div>
-            </div>
+            </div>@media (max-width: 576px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .brand-title {
+
             
             <!-- Painting 2 -->
             <div class="painting-card">
@@ -884,7 +592,7 @@
             <p class="footer-contact">Studio visits by appointment only</p>
             <p class="footer-contact">contact@artmansion.com | +1 (555) 987-6543</p>
             <p class="copyright">© 2025 ArtMansion®. All rights reserved.</p>
-            <p class="zahan-store">Sales handled by <a href="https://zahanstore.com" target="_blank">Zahan Store</a></p>
+            <p>Sales handled by <a href="https://zahanstore.com" class="zahan-link">Zahan Store</a></p>
         </footer>
     </div>
 </body>
