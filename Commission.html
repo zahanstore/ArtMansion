@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtMansion® | Commission Artwork</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.png" type="image/png">
+    <style>
+        /* All the same styles as index.html */
+        :root { --sand: #e8e5de; --accent: #2bb3a6; --dark: #333; --light: #f8f8f8; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Quicksand', sans-serif; }
+        body { background: var(--sand); color: var(--dark); line-height: 1.6; }
+        /* ... include all other styles from index.html ... */
+        
+        .commission-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.3rem 1rem rgba(0,0,0,0.1);
+            margin: 3rem 0;
+            max-width: 800px;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 0.3rem;
+            font-family: 'Quicksand', sans-serif;
+        }
+        
+        textarea {
+            min-height: 150px;
+        }
+        
+        .submit-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        
+        .submit-btn:hover {
+            background: #239a8e;
+            transform: translateY(-2px);
+        }
+        
+        .process-steps {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.3rem 1rem rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        
+        .step {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: var(--accent);
+            color: white;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="ArtMansion Logo" class="logo">
+        <h1 class="brand-title">ArtMansion</h1>
+        <p class="slogan">Paintings, Art, Vases and more...</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Gallery</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="artist.html">Artist</a></li>
+                <li><a href="exhibitions.html">Exhibitions</a></li>
+                <li><a href="commission.html" class="active">Commission</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Commission a Custom Artwork</h2>
+        
+        <div class="process-steps">
+            <h3>Our Commission Process</h3>
+            <div class="step">
+                <div class="step-number">1</div>
+                <h4>Initial Consultation</h4>
+                <p>We discuss your vision, space requirements, and artistic preferences.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h4>Concept Development</h4>
+                <p>The artist creates preliminary sketches and color studies for your approval.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h4>Creation</h4>
+                <p>Your artwork is handcrafted using the finest materials and techniques.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h4>Delivery</h4>
+                <p>Your completed masterpiece is carefully packaged and shipped worldwide.</p>
+            </div>
+        </div>
+        
+        <form class="commission-form" name="commission" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="commission">
+            <p class="hidden">
+                <label>Don't fill this out if you're human: <input name="bot-field"></label>
+            </p>
+            
+            <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="form-group">
+                <label for="size">Desired Size *</label>
+                <select id="size" name="size" required>
+                    <option value="">Select size</option>
+                    <option value="small">Small (under 24")</option>
+                    <option value="medium">Medium (24"-36")</option>
+                    <option value="large">Large (over 36")</option>
+                    <option value="custom">Custom Size</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="style">Preferred Style *</label>
+                <select id="style" name="style" required>
+                    <option value="">Select style</option>
+                    <option value="abstract">Abstract</option>
+                    <option value="landscape">Landscape</option>
+                    <option value="portrait">Portrait</option>
+                    <option value="still-life">Still Life</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="colors">Preferred Color Palette</label>
+                <input type="text" id="colors" name="colors" placeholder="E.g., Earth tones, bright colors, etc.">
+            </div>
+            
+            <div class="form-group">
+                <label for="description">Artwork Description *</label>
+                <textarea id="description" name="description" required placeholder="Please describe your vision for the artwork, including any specific elements or themes you'd like included..."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="budget">Budget Range *</label>
+                <input type="text" id="budget" name="budget" required placeholder="E.g., $1,000-$2,000">
+            </div>
+            
+            <div class="form-group">
+                <label for="deadline">Desired Completion Date</label>
+                <input type="date" id="deadline" name="deadline">
+            </div>
+            
+            <div class="form-group">
+                <label for="reference">Reference Images (URLs)</label>
+                <textarea id="reference" name="reference" placeholder="Please paste links to any reference images or inspiration"></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit Commission Request</button>
+        </form>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Artsy</a>
+            <a href="#">Pinterest</a>
+            <a href="#">Saatchi Art</a>
+        </div>
+        <p class="footer-text">Studio visits by appointment only</p>
+        <p class="footer-text">contact@artmansion.com | +1 (555) 987-6543</p>
+        <p class="footer-text">© 2025 ArtMansion®. All rights reserved.</p>
+        <p class="footer-text">Sales handled by <a href="https://zahanstore.com" class="zahan-link">Zahan Store</a></p>
+    </footer>
+</body>
+</html>
