@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtMansion® | Collections</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.png" type="image/png">
+    <style>
+        /* All the same styles as index.html */
+        :root { --sand: #e8e5de; --accent: #2bb3a6; --dark: #333; --light: #f8f8f8; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Quicksand', sans-serif; }
+        body { background: var(--sand); color: var(--dark); line-height: 1.6; }
+        /* ... include all other styles from index.html ... */
+        
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .collection-card {
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 0.3rem 1rem rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .collection-card:hover {
+            transform: translateY(-0.5rem);
+            box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="ArtMansion Logo" class="logo">
+        <h1 class="brand-title">ArtMansion</h1>
+        <p class="slogan">Paintings, Art, Vases and more...</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Gallery</a></li>
+                <li><a href="collections.html" class="active">Collections</a></li>
+                <li><a href="artist.html">Artist</a></li>
+                <li><a href="exhibitions.html">Exhibitions</a></li>
+                <li><a href="commission.html">Commission</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Our Collections</h2>
+        <div class="collection-grid">
+            <div class="collection-card">
+                <div class="painting-img-container">
+                    <img src="collections/abstract.jpg" alt="Abstract Collection" class="painting-img">
+                </div>
+                <div class="painting-info">
+                    <h3 class="painting-title">Abstract Expressions</h3>
+                    <p class="painting-details">Modern abstract works exploring color and form</p>
+                    <a href="index.html?collection=abstract" class="buy-button">View Collection</a>
+                </div>
+            </div>
+            
+            <div class="collection-card">
+                <div class="painting-img-container">
+                    <img src="collections/landscape.jpg" alt="Landscape Collection" class="painting-img">
+                </div>
+                <div class="painting-info">
+                    <h3 class="painting-title">Natural Landscapes</h3>
+                    <p class="painting-details">Breathtaking views from around the world</p>
+                    <a href="index.html?collection=landscape" class="buy-button">View Collection</a>
+                </div>
+            </div>
+            
+            <div class="collection-card">
+                <div class="painting-img-container">
+                    <img src="collections/portrait.jpg" alt="Portrait Collection" class="painting-img">
+                </div>
+                <div class="painting-info">
+                    <h3 class="painting-title">Human Essence</h3>
+                    <p class="painting-details">Captivating portraits revealing inner beauty</p>
+                    <a href="index.html?collection=portrait" class="buy-button">View Collection</a>
+                </div>
+            </div>
+            
+            <div class="collection-card">
+                <div class="painting-img-container">
+                    <img src="collections/contemporary.jpg" alt="Contemporary Collection" class="painting-img">
+                </div>
+                <div class="painting-info">
+                    <h3 class="painting-title">Modern Perspectives</h3>
+                    <p class="painting-details">Cutting-edge contemporary artworks</p>
+                    <a href="index.html?collection=contemporary" class="buy-button">View Collection</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Artsy</a>
+            <a href="#">Pinterest</a>
+            <a href="#">Saatchi Art</a>
+        </div>
+        <p class="footer-text">Studio visits by appointment only</p>
+        <p class="footer-text">contact@artmansion.com | +1 (555) 987-6543</p>
+        <p class="footer-text">© 2025 ArtMansion®. All rights reserved.</p>
+        <p class="footer-text">Sales handled by <a href="https://zahanstore.com" class="zahan-link">Zahan Store</a></p>
+    </footer>
+</body>
+</html>
