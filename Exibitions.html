@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtMansion® | Exhibitions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.png" type="image/png">
+    <style>
+        /* All the same styles as index.html */
+        :root { --sand: #e8e5de; --accent: #2bb3a6; --dark: #333; --light: #f8f8f8; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Quicksand', sans-serif; }
+        body { background: var(--sand); color: var(--dark); line-height: 1.6; }
+        /* ... include all other styles from index.html ... */
+        
+        .exhibition-list {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.3rem 1rem rgba(0,0,0,0.1);
+            margin: 3rem 0;
+        }
+        
+        .exhibition-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .exhibition-item:last-child {
+            border-bottom: none;
+        }
+        
+        .exhibition-title {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .exhibition-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 0.3rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="ArtMansion Logo" class="logo">
+        <h1 class="brand-title">ArtMansion</h1>
+        <p class="slogan">Paintings, Art, Vases and more...</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Gallery</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="artist.html">Artist</a></li>
+                <li><a href="exhibitions.html" class="active">Exhibitions</a></li>
+                <li><a href="commission.html">Commission</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Current & Past Exhibitions</h2>
+        <div class="exhibition-list">
+            <div class="exhibition-item">
+                <h3 class="exhibition-title">"Visions in Color" - Solo Exhibition</h3>
+                <p class="painting-details">Modern Art Gallery, New York | June 2024</p>
+                <img src="exhibitions/nyc-show.jpg" alt="New York Exhibition" class="exhibition-image">
+                <p>This groundbreaking solo exhibition featured 25 original works exploring the emotional resonance of color. The show received critical acclaim for its innovative use of texture and light.</p>
+            </div>
+            
+            <div class="exhibition-item">
+                <h3 class="exhibition-title">"Contemporary Perspectives" - Group Show</h3>
+                <p class="painting-details">International Art Fair, London | March 2024</p>
+                <img src="exhibitions/london-show.jpg" alt="London Exhibition" class="exhibition-image">
+                <p>Participated alongside 12 international artists in this prestigious group show. Featured three large-scale abstract works from the "Chromatic Fields" series.</p>
+            </div>
+            
+            <div class="exhibition-item">
+                <h3 class="exhibition-title">"Elements" - Solo Exhibition</h3>
+                <p class="painting-details">Galerie du Monde, Paris | October 2023</p>
+                <img src="exhibitions/paris-show.jpg" alt="Paris Exhibition" class="exhibition-image">
+                <p>A celebration of natural forms, this exhibition showcased works inspired by earth, water, air, and fire. Included interactive installations alongside traditional canvas works.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Artsy</a>
+            <a href="#">Pinterest</a>
+            <a href="#">Saatchi Art</a>
+        </div>
+        <p class="footer-text">Studio visits by appointment only</p>
+        <p class="footer-text">contact@artmansion.com | +1 (555) 987-6543</p>
+        <p class="footer-text">© 2025 ArtMansion®. All rights reserved.</p>
+        <p class="footer-text">Sales handled by <a href="https://zahanstore.com" class="zahan-link">Zahan Store</a></p>
+    </footer>
+</body>
+</html>
