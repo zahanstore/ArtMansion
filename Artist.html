@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtMansion® | Artist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.png" type="image/png">
+    <style>
+        /* All the same styles as index.html */
+        :root { --sand: #e8e5de; --accent: #2bb3a6; --dark: #333; --light: #f8f8f8; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Quicksand', sans-serif; }
+        body { background: var(--sand); color: var(--dark); line-height: 1.6; }
+        /* ... include all other styles from index.html ... */
+        
+        .artist-bio {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.3rem 1rem rgba(0,0,0,0.1);
+            margin: 3rem 0;
+        }
+        
+        .artist-portrait {
+            float: right;
+            width: 300px;
+            margin: 0 0 1rem 2rem;
+            border-radius: 0.3rem;
+        }
+        
+        .artist-statement {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.3rem 1rem rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .artist-portrait {
+                float: none;
+                width: 100%;
+                margin: 0 0 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="ArtMansion Logo" class="logo">
+        <h1 class="brand-title">ArtMansion</h1>
+        <p class="slogan">Paintings, Art, Vases and more...</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Gallery</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="artist.html" class="active">Artist</a></li>
+                <li><a href="exhibitions.html">Exhibitions</a></li>
+                <li><a href="commission.html">Commission</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="artist-bio">
+            <h2>About the Artist</h2>
+            <img src="artist/portrait.jpg" alt="Artist Portrait" class="artist-portrait">
+            <p>Born in 1985 in Paris, [Artist Name] discovered a passion for painting at an early age. After graduating from the École des Beaux-Arts with honors, they developed a unique style that blends classical techniques with contemporary themes.</p>
+            <p>Over the past 15 years, [Artist Name] has exhibited in galleries across Europe and North America, with works held in private collections worldwide. Their art explores the relationship between color, emotion, and human perception.</p>
+            <p>When not in the studio, [Artist Name] teaches masterclasses and mentors emerging artists through the ArtMansion Foundation.</p>
+        </div>
+        
+        <div class="artist-statement">
+            <h3>Artist Statement</h3>
+            <p>"My work is an ongoing dialogue between tradition and innovation. I draw inspiration from the natural world, transforming organic forms into abstract compositions that invite viewers to explore their own emotional responses."</p>
+            <p>"Each piece begins with a moment of connection - with a landscape, an emotion, or a musical phrase. Through layers of color and texture, I aim to capture not just what I see, but how it makes me feel."</p>
+            <p>"The creative process is both meditative and exhilarating. I work intuitively, allowing each painting to evolve organically until it reaches its own resolution."</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#">Instagram</a>
+            <a href="#">Artsy</a>
+            <a href="#">Pinterest</a>
+            <a href="#">Saatchi Art</a>
+        </div>
+        <p class="footer-text">Studio visits by appointment only</p>
+        <p class="footer-text">contact@artmansion.com | +1 (555) 987-6543</p>
+        <p class="footer-text">© 2025 ArtMansion®. All rights reserved.</p>
+        <p class="footer-text">Sales handled by <a href="https://zahanstore.com" class="zahan-link">Zahan Store</a></p>
+    </footer>
+</body>
+</html>
