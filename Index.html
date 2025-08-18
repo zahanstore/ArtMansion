@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtMansion® | Paintings, Art, Vases and more...</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.png" type="image/png">
+    <style>
+        :root {
+            --sand: #e8e5de;
+            --accent: #2bb3a6;
+            --dark: #333;
+            --light: #f8f8f8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
+        }
+        
+        body {
+            background: var(--sand);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background.jpg') center/cover;
+            padding: 2rem 1rem;
+            text-align: center;
+            color: white;
+        }
+        
+        .logo {
+            height: 80px;
+            margin-bottom: 1rem;
+        }
+        
+        .brand-title {
+            font-weight: 700;
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .brand-title::after {
+            content: '®';
+            font-size: 1rem;
+            vertical-align: super;
+        }
+        
+        .slogan {
+            display: inline-block;
+            font-weight: 400;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: rgba(0,0,0,0.5);
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            border: 1px solid white;
+            margin: 0.5rem 0 1.5rem;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 0 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .painting-card {
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 0.3rem 1rem rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        
+        .painting-card:hover {
+            transform: translateY(-0.5rem);
+            box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.15);
+        }
+        
+        .painting-img-container {
+            background: #f5f5f5;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        
+        .painting-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .painting-info {
+            padding: 1.5rem;
+        }
+        
+        .painting-title {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .painting-style {
+            display: inline-block;
+            font-size: 0.8rem;
+            padding: 0.3rem 0.8rem;
+            background: var(--sand);
+            border-radius: 1rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .painting-details {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .buy-button {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 2rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            margin-top: 0.8rem;
+            font-size: 0.9rem;
+        }
+        
+        .buy-button:hover {
+            background: #239a8e;
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            background: rgba(255,255,255,0.8);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .social-links a {
+            color: var(--dark);
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-0.2rem);
+        }
+        
+        .footer-text {
+            color: #666;
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+        
+        .zahan-link {
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .brand-title {
+                font-size: 2rem;
+            }
+            
+            .slogan {
+                font-size: 1rem;
+                padding: 0.4rem 1.2rem;
+            }
+            
+            nav ul {
+                gap: 0.5rem;
+            }
+            
+            nav a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+            .commission-cta {
+        background: rgba(255,255,255,0.85);
+        padding: 4rem 2rem;
+        margin: 3rem 0;
+        text-align: center;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.3rem 1rem rgba(0,0,0,0.05);
+    }
+    
+            .commission-cta h2 {
+        font-size: 2rem;
+        color: var(--dark);
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+    }
+    
+            .cta-description {
+        max-width: 700px;
+        margin: 0 auto 2rem;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #555;
+    }
+    
+            .cta-button {
+        display: inline-block;
+        padding: 0.8rem 2.5rem;
+        background: var(--accent);
+        color: white;
+        text-decoration: none;
+        border-radius: 2rem;
+        font-weight: 600;
+        transition: all 0.3s;
+        margin-bottom: 1.5rem;
+        border: 2px solid var(--accent);
+    }
+    
+            .cta-button:hover {
+        background: transparent;
+        color: var(--accent);
+        transform: translateY(-2px);
+    }
+    
+            .zahan-note {
+        color: #666;
+        font-size: 0.95rem;
+    }
+    
+            .zahan-note a {
+        color: var(--accent);
+        font-weight: 600;
+        text-decoration: none;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="ArtMansion Logo" class="logo">
+        <h1 class="brand-title">ArtMansion</h1>
+        <p class="slogan">Paintings, Art, Vases and more...</p>
+        
+        <nav>
+            <ul>
+                <li><a href="#gallery" class="active">Gallery</a></li>
+                <li><a href="Collections.html">Collections</a></li>
+                <li><a href="Artist.html">Artist</a></li>
+                <li><a href="Exhibitions.html">Exhibitions</a></li>
+                <li><a href="Commission.html">Commission</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="gallery">
+            <!-- Painting 1 -->
+            <div class="painting-card">
+                <div class="painting-img-container">
+                    <img src="Paintings/P1.jpg" alt="Mountain Dawn" class="painting-img">
+                </div>
+                <div class="painting-info">
+                    <span class="painting-style">Landscape</span>
+                    <h3 class="painting-title">Mountain Dawn</h3>
+                    <p class="painting-details">24" × 36" | Oil on canvas</p>
+                    <p class="painting-details">$1,800</p>
+                    <a href="https://zahanstore.com/artmansion-p1" class="buy-button">Buy on Zahan Store</a>
+                </div>
+            </div>
+            
+            <!-- Painting 2 -->
+            <div class="painting-card">
+                <div class="painting-img-container">
+                    <img src="Paintings/P2.jpg" alt="Ocean Serenity" class="painting-img">
+                </div>
+                <div class="painting-info">
+                    <span class="painting-style">Seascape</span>
+                    <h3 class="painting-title">Ocean Serenity</h3>
+                    <p class="painting-details">30" × 40" | Acrylic</p>
+                    <p class="painting-details">$2,200</p>
+                    <a href="https://zahanstore.com/artmansion-p2" class="buy-button">Buy on Zahan Store</a>
+                </div>
+            </div>
+        
+            <!-- Painting 3 -->
+            <div class="painting-card">
+                <div class="painting-img-container">
+                    <img src="Paintings/P3.jpg" alt="Painting 3" class="painting-img">
+                </div>
+                <div class="painting-info">
+                    <span class="painting-style">Abstract</span>
+                    <h3 class="painting-title">Color Symphony</h3>
+                    <p class="painting-size">36" × 36" | Mixed media</p>
+                    <p class="painting-price">$2,500</p>
+                    <a href="https://zahanstore.com/artmansion-p3" class="buy-button">Buy on Zahan Store</a>
+                </div>
+            </div>
+            
+            <!-- Painting 4 -->
+            <div class="painting-card">
+                <div class="painting-img-container">
+                    <img src="Paintings/P4.jpg" alt="Painting 4" class="painting-img">
+                </div>
+                <div class="painting-info">
+                    <span class="painting-style">Forest</span>
+                    <h3 class="painting-title">Enchanted Woods</h3>
+                    <p class="painting-size">24" × 30" | Oil</p>
+                    <p class="painting-price">$1,600</p>
+                    <a href="https://zahanstore.com/artmansion-p4" class="buy-button">Buy on Zahan Store</a>
+                </div>
+            </div>
+            
+            <!-- Painting 5 -->
+            <div class="painting-card">
+                <div class="painting-img-container">
+                    <img src="Paintings/P5.jpg" alt="Painting 5" class="painting-img">
+                </div>
+                <div class="painting-info">
+                    <span class="painting-style">Cityscape</span>
+                    <h3 class="painting-title">Urban Lights</h3>
+                    <p class="painting-size">30" × 40" | Acrylic</p>
+                    <p class="painting-price">$2,100</p>
+                    <a href="https://zahanstore.com/artmansion-p5" class="buy-button">Buy on Zahan Store</a>
+                </div>
+            </div>
+            
+            <!-- Painting 6 -->
+            <div class="painting-card">
+                <div class="painting-img-container">
+                    <img src="Paintings/P6.jpg" alt="Painting 6" class="painting-img">
+                </div>
+                <div class="painting-info">
+                    <span class="painting-style">Impressionist</span>
+                    <h3 class="painting-title">Garden Blooms</h3>
+                    <p class="painting-size">20" × 24" | Oil</p>
+                    <p class="painting-price">$1,400</p>
+                    <a href="https://zahanstore.com/artmansion-p6" class="buy-button">Buy on Zahan Store</a>
+                </div>
+            </div>
+            
+            <!-- Painting 7 -->
+            <div class="painting-card">
+                <div class="painting-img-container">
+                    <img src="Paintings/P7.jpg" alt="Painting 7" class="painting-img">
+                </div>
+                <div class="painting-info">
+                    <span class="painting-style">Abstract</span>
+                    <h3 class="painting-title">Emotional Waves</h3>
+                    <p class="painting-size">36" × 48" | Mixed media</p>
+                    <p class="painting-price">$2,800</p>
+                    <a href="https://zahanstore.com/artmansion-p7" class="buy-button">Buy on Zahan Store</a>
+                </div>
+            </div>
+            
+            <!-- Painting 8 -->
+            <div class="painting-card">
+                <div class="painting-img-container">
+                    <img src="Paintings/P8.jpg" alt="Painting 8" class="painting-img">
+                </div>
+                <div class="painting-info">
+                    <span class="painting-style">Portrait</span>
+                    <h3 class="painting-title">The Thinker</h3>
+                    <p class="painting-size">18" × 24" | Oil</p>
+                    <p class="painting-price">$1,200</p>
+                    <a href="https://zahanstore.com/artmansion-p8" class="buy-button">Buy on Zahan Store</a>
+                </div>
+            </div>
+            
+            <!-- Painting 9 -->
+            <div class="painting-card">
+                <div class="painting-img-container">
+                    <img src="Paintings/P9.jpg" alt="Painting 9" class="painting-img">
+                </div>
+                <div class="painting-info">
+                    <span class="painting-style">Still Life</span>
+                    <h3 class="painting-title">Morning Coffee</h3>
+                    <p class="painting-size">16" × 20" | Acrylic</p>
+                    <p class="painting-price">$950</p>
+                    <a href="https://zahanstore.com/artmansion-p9" class="buy-button">Buy on Zahan Store</a>
+                </div>
+            </div>
+            
+             <!-- Painting 10 -->
+            <div class="painting-card">
+                <div class="painting-img-container">
+                    <img src="Paintings/P10.jpg" alt="Painting 10" class="painting-img">
+                </div>
+                <div class="painting-info">
+                    <span class="painting-style">Landscape</span>
+                    <h3 class="painting-title">Autumn Valley</h3>
+                    <p class="painting-size">24" × 36" | Oil</p>
+                    <p class="painting-price">$1,900</p>
+                    <a href="https://zahanstore.com/artmansion-p10" class="buy-button">Buy on Zahan Store</a>
+                </div>
+            </div>
+            
+            <!-- Painting 11 -->
+            <div class="painting-card">
+                <div class="painting-img-container">
+                    <img src="Paintings/P11.jpg" alt="Painting 11" class="painting-img">
+                </div>
+                <div class="painting-info">
+                    <span class="painting-style">Seascape</span>
+                    <h3 class="painting-title">Stormy Seas</h3>
+                    <p class="painting-size">30" × 40" | Oil</p>
+                    <p class="painting-price">$2,300</p>
+                    <a href="https://zahanstore.com/artmansion-p11" class="buy-button">Buy on Zahan Store</a>
+                </div>
+            </div>
+            
+            <!-- Painting 12 -->
+            <div class="painting-card">
+                <div class="painting-img-container">
+                    <img src="Paintings/P12.jpg" alt="Painting 12" class="painting-img">
+                </div>
+                <div class="painting-info">
+                    <span class="painting-style">Abstract</span>
+                    <h3 class="painting-title">Geometric Harmony</h3>
+                    <p class="painting-size">36" × 36" | Acrylic</p>
+                    <p class="painting-price">$2,100</p>
+                    <a href="https://zahanstore.com/artmansion-p12" class="buy-button">Buy on Zahan Store</a>
+                </div>
+            </div>
+            
+            <!-- Painting 13 -->
+            <div class="painting-card">
+                <div class="painting-img-container">
+                    <img src="Paintings/P13.jpg" alt="Painting 13" class="painting-img">
+                </div>
+                <div class="painting-info">
+                    <span class="painting-style">Floral</span>
+                    <h3 class="painting-title">Spring Bouquet</h3>
+                    <p class="painting-size">20" × 24" | Oil</p>
+                    <p class="painting-price">$1,300</p>
+                    <a href="https://zahanstore.com/artmansion-p13" class="buy-button">Buy on Zahan Store</a>
+                </div>
+            </div>
+            
+            <!-- Painting 14 -->
+            <div class="painting-card">
+                <div class="painting-img-container">
+                    <img src="Paintings/P14.jpg" alt="Painting 14" class="painting-img">
+                </div>
+                <div class="painting-info">
+                    <span class="painting-style">Cityscape</span>
+                    <h3 class="painting-title">Metropolis</h3>
+                    <p class="painting-size">36" × 48" | Acrylic</p>
+                    <p class="painting-price">$2,700</p>
+                    <a href="https://zahanstore.com/artmansion-p14" class="buy-button">Buy on Zahan Store</a>
+                </div>
+            </div>
+            
+            <!-- Painting 15 -->
+            <div class="painting-card">
+                <div class="painting-img-container">
+                    <img src="Paintings/P15.jpg" alt="Painting 15" class="painting-img">
+                </div>
+                <div class="painting-info">
+                    <span class="painting-style">Portrait</span>
+                    <h3 class="painting-title">The Muse</h3>
+                    <p class="painting-size">24" × 30" | Oil</p>
+                    <p class="painting-price">$1,800</p>
+                    <a href="https://zahanstore.com/artmansion-p15" class="buy-button">Buy on Zahan Store</a>
+                </div>
+            </div>
+            
+            <!-- Painting 16 -->
+            <div class="painting-card">
+                <div class="painting-img-container">
+                    <img src="Paintings/P16.jpg" alt="Painting 16" class="painting-img">
+                </div>
+                <div class="painting-info">
+                    <span class="painting-style">Landscape</span>
+                    <h3 class="painting-title">Winter Solitude</h3>
+                    <p class="painting-size">24" × 36" | Oil</p>
+                    <p class="painting-price">$1,900</p>
+                    <a href="https://zahanstore.com/artmansion-p16" class="buy-button">Buy on Zahan Store</a>
+                </div>
+            </div>
+            
+            <!-- Painting 17 -->
+            <div class="painting-card">
+                <div class="painting-img-container">
+                    <img src="Paintings/P17.jpg" alt="Painting 17" class="painting-img">
+                </div>
+                <div class="painting-info">
+                    <span class="painting-style">Abstract</span>
+                    <h3 class="painting-title">Cosmic Dance</h3>
+                    <p class="painting-size">40" × 40" | Mixed media</p>
+                    <p class="painting-price">$3,000</p>
+                    <a href="https://zahanstore.com/artmansion-p17" class="buy-button">Buy on Zahan Store</a>
+         
